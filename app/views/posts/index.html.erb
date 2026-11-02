@@ -1,0 +1,7 @@
+<% @posts.each do |post| %>
+  <div class="mb-4">
+    <%= image_tag post.image, style: "max-width:300px;width:100%" if post.image.attached? %>
+    <p><%= post.description %></p>
+    <%= link_to "Show", post %>
+  </div>
+<% end %>

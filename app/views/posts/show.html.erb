@@ -1,0 +1,7 @@
+<%= image_tag @post.image, style: "max-width:600px;width:100%" if @post.image.attached? %>
+<p><%= @post.description %></p>
+<% if @post.user == current_user %>
+  <%= link_to "Edit", edit_post_path(@post), class: "btn btn-secondary" %>
+  <%= button_to "Destroy", @post, method: :delete, class: "btn btn-danger",
+        data: { turbo_confirm: "Are you sure?" } %>
+<% end %>
